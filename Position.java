@@ -1,8 +1,3 @@
-/*started on 27 April 2025,Sunday.
-finished(debugging) on 8 May 2025,Friday.
-But looping through moves to find checks and pinned
-pieces, as well as defended pieces for the king, might slow the move gen down.*/
-
 import java.util.*;
 public class Position
 {
@@ -22,7 +17,6 @@ public class Position
  public Location BlackKing;
  public List<save> history=new ArrayList<>();
 
- //Creates a Deep Copy of the Position object
  public Position copy()
  {
   Position pos = new Position();
@@ -74,7 +68,6 @@ public class Position
 
  public void applyMove(Move move)
  {
-  //long start=System.currentTimeMillis();
   Move bm=lastMove.copy();
   boolean[] back=new boolean[9];
   int[] loc=new int[4];
@@ -135,8 +128,6 @@ public class Position
   if(squares[BlackKing.Row-1][BlackKing.Col-1].attackedByOtherColor((short)(-10))){blackInCheck = true;}
   //storing last move
   lastMove=move.copy();
-  //long end=System.currentTimeMillis();
-  //System.out.println((end-start)+" ms");
  }
 
  public void undoMove()
@@ -162,7 +153,6 @@ public class Position
 
  public List<Move> getMoves()
  {
-  //long start=System.currentTimeMillis();
   List<Move> moves = new ArrayList<>();
   for(int i=0;i<=7;i++)
   {
@@ -227,14 +217,13 @@ public class Position
    finalMoves.add(move);
    this.undoMove();
   }
-  //long end=System.currentTimeMillis();
-  //System.out.println((end-start)+" ms");
   return finalMoves;
  }
 
- //The fakeKing function seems to be necessary
- //to avoid bugs while finding legal moves
- //when a king would face another king.
+ /*The fakeKing function seems to be necessary
+ to avoid bugs while finding legal moves
+ when a king would face another king.*/
+
  public List<Move> fakeKing(int r,int c)
  {
   List<Move> moves= new ArrayList<>();

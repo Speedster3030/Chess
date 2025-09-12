@@ -1,8 +1,8 @@
-an attemp at a chess "engine" in Java.
-very slow move gen and dubious search function,
-building this project taught me about object 
-oruented programming, and improving on this taught me a lot about 
-proper optimization and writing good code.
-This is way beyond repair though, but i have kept
-this in order to remind myself the importance 
-of gradual improvement and progress 
+My first attemp at a chess engine in Java.
+
+The code is obviously not up to the Professional
+Standard, but I'll defend myself by saying that this 
+is the first Object Oriented Program I ever made,
+and it taught me the basics of how a game program
+must be written.
+

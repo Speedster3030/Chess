@@ -8,15 +8,7 @@ public class play extends Search
   List<Move> moves=new ArrayList<>();
   BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
   Position p=new Position();int n=0;boolean turn=true;
-  /*System.out.println("Choose color");
-  System.out.println("1.White\n2.Black");
-  String st=br.readLine();
-  switch(st)
-  {
-   case "1":turn=true;break;
-   case "2":turn=false;break;
-   default:System.out.println("invalid");st=br.readLine();
-  }*/
+
   while(true)
   {
    p.display();moves=s.order(p.getMoves());n=0;
@@ -38,7 +30,7 @@ public class play extends Search
    else
    {
     int bestev=25000;Move bestmove=moves.get(0);
-    //long start=System.currentTimeMillis();
+
     for(Move move:moves)
     {
      p.applyMove(move);
@@ -48,11 +40,6 @@ public class play extends Search
       bestev=eval;bestmove=move;
      }
      p.undoMove();
-     /*long end=System.currentTimeMillis();
-     if(end-start>20000)
-     {
-      break;
-     }*/
     }
     p.applyMove(bestmove);
    }
