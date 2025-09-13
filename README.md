@@ -6,3 +6,6 @@ is the first Object Oriented Program I ever made,
 and it taught me the basics of how a game program
 must be written.
 
+Any corrections and optimizations (if someone out there 
+is brave enough) are welcome!
+
